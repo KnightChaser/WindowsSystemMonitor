@@ -1,0 +1,21 @@
+<Sysmon schemaversion="4.98">
+  <HashAlgorithms>md5,sha256</HashAlgorithms>
+
+  <!-- Checking for signature revocation for drivers. -->
+  <CheckRevocation/>
+  <ArchiveDirectory>Archive</ArchiveDirectory>
+  <EventFiltering>
+    <RuleGroup name="Event ID 22 DNS Queries" groupRelation="or">
+      <DnsQuery onmatch="include">
+        <!-- some website domains -->
+        <QueryName condition="is">youtube.com</QueryName>
+        <QueryName condition="is">gachon.ac.kr</QueryName>
+        <QueryName condition="is">yahoo.com</QueryName>
+        <QueryName condition="is">enki.co.kr</QueryName>
+        <QueryName condition="is">google.com</QueryName>
+        <QueryName condition="is">1337x.to</QueryName>
+        <QueryName condition="is">twitter.com</QueryName>
+      </DnsQuery>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>

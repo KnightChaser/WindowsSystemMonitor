@@ -1,0 +1,13 @@
+<Sysmon schemaversion="4.98">
+  <HashAlgorithms>md5,sha256</HashAlgorithms>
+
+  <!-- Checking for signature revocation for drivers. -->
+  <CheckRevocation/>
+  <ArchiveDirectory>Archive</ArchiveDirectory>
+  <EventFiltering>
+    <RuleGroup name="Event ID 22 DNS Queries" groupRelation="or">
+      <DnsQuery onmatch="exclude">
+      </DnsQuery>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
