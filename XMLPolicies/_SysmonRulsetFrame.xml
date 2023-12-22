@@ -1,0 +1,14 @@
+<Sysmon schemaversion="0.00">
+	<Configure_Entries>...</Configure_Entries>
+	<EventFiltering>
+		<RuleGroup name="", groupRelation="">
+			<Event_Tag onmatch="">
+				<!-- Filtering -->
+				<Field condition=""> ... </Field>
+				<Rule name="", groupRelation="">
+					<Field condition=""> ... </Field>
+				</Rule>
+			</Event_Tag>
+		</RuleGroup>
+	</EventFiltering>
+</Sysmon>
