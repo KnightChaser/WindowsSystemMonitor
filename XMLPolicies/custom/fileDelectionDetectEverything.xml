@@ -1,0 +1,6 @@
+<Sysmon schemaversion="4.92">
+  <EventFiltering>
+    <FileDelete onmatch="exclude">
+    </FileDelete>
+  </EventFiltering>
+</Sysmon>

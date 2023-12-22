@@ -1,0 +1,23 @@
+<Sysmon schemaversion="4.91">
+  <HashAlgorithms>md5,sha256</HashAlgorithms>
+
+  <!-- Checking for signature revocation for drivers. -->
+  <CheckRevocation/>
+  <ArchiveDirectory>Archive</ArchiveDirectory>
+  <EventFiltering>
+    <RuleGroup name="Event ID 23 File Deleted Archives" groupRelation="or">
+      <FileDelete onmatch="include">
+        <!-- Custom location -->
+        <Rule groupRelation="and">
+            <TargetFilename condition="contains">C:\susamongus</TargetFilename>
+            <TargetFilename condition="contains any">.cmd;.bat;.js;.txt</TargetFilename>
+        </Rule>
+         <!-- Default user download folder location -->
+        <Rule groupRelation="and">
+            <TargetFilename condition="contains">\Downloads\</TargetFilename>              
+            <TargetFilename condition="contains any">.com;.bat;.exe;.reg;.ps1;.vbs;.vba;.lnk;.doc;.xls;.hta;.bin;.dll;.xla;.cmd;.sh;.lnk;.pptm;.scr;.msi;.sct</TargetFilename>
+        </Rule>
+      </FileDelete>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
