@@ -1,0 +1,10 @@
+<Sysmon schemaversion="4.91">
+  <EventFiltering>
+    <RuleGroup name="Event ID 3 Network connection" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <!-- Track down the every network connection via chrome.exe -->
+        <Image condition="image">chrome.exe</Image>
+      </NetworkConnect>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
