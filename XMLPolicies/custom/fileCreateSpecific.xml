@@ -1,0 +1,11 @@
+<Sysmon schemaversion="4.91">
+	<EventFiltering>
+		<RuleGroup name="Event ID 11 File Create" groupRelation="or">
+			<FileCreate onmatch="include">
+				<TargetFilename condition="end with">.bat</TargetFilename>
+				<TargetFilename condition="end with">.cmd</TargetFilename>
+                <TargetFilename condition="end with">.ps1</TargetFilename>
+			</FileCreate>
+		</RuleGroup>
+	</EventFiltering>
+</Sysmon>
