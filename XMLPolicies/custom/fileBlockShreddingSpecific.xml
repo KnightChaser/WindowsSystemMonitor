@@ -1,0 +1,13 @@
+<Sysmon schemaversion="4.91">
+	<EventFiltering>
+		<RuleGroup name="Event ID 28 File Block Shredding" groupRelation="and">
+			<FileBlockShredding onmatch="include">
+				<Rule groupRelation="or">
+					<TargetFilename condition="contains">C:\susamongus</TargetFilename>
+					<TargetFilename condition="contains">C:\Windows\System</TargetFilename>
+					<TargetFilename condition="contains">C:\Windows\System32</TargetFilename>
+				</Rule>
+			</FileBlockShredding>
+		</RuleGroup>
+	</EventFiltering>
+</Sysmon>
