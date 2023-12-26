@@ -1,0 +1,18 @@
+<Sysmon schemaversion="4.91">
+	<EventFiltering>
+		<RuleGroup name="Event ID 27 File Block Executable" groupRelation="and">			
+            <FileBlockExecutable onmatch="include">
+                <Rule groupRelation="or">
+                    <!-- block position -->
+                    <TargetFilename condition="contains">Downloads</TargetFilename>
+                    <TargetFilename condition="contains">C:\Users</TargetFilename>
+                    <TargetFilename condition="contains">C:\susamongus</TargetFilename>
+                </Rule>
+                <Rule groupRelation="or">
+                    <!-- block executable types (file extension) -->
+                    <TargetFilename name="executables" condition="contains any">.dll;.exe</TargetFilename>
+                </Rule>
+            </FileBlockExecutable>
+		</RuleGroup>
+	</EventFiltering>
+</Sysmon>
