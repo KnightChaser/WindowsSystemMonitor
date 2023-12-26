@@ -1,0 +1,10 @@
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+    <RuleGroup name="Event ID 15 File stream created" groupRelation="or">
+      <FileCreateStreamHash onmatch="include">
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="end with">.ps2</TargetFilename>
+      </FileCreateStreamHash>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
