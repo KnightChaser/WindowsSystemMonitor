@@ -1,0 +1,9 @@
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+    <RuleGroup name="Event ID 2 File Creation Time Changed" groupRelation="or">
+      <FileCreateTime onmatch="include">
+        <TargetFilename  condition="begin with">C:\susamongus</TargetFilename>
+      </FileCreateTime>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
