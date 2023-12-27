@@ -1,0 +1,10 @@
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+    <RuleGroup name="Event ID 17 Pipe created" groupRelation="or">
+      <PipeEvent onmatch="include">
+        <Image condition="end with">susamongus.exe</Image>
+        <Image condition="end with">SysmonSimulator.exe</Image>
+      </PipeEvent>
+    </RuleGroup>
+  </EventFiltering>
+</Sysmon>
